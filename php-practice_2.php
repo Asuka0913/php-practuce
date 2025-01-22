@@ -18,10 +18,11 @@ for ($i = 1; $i <= 100; $i++) {
 echo "{$personalInfos[1]['name']}の電話番号は{$personalInfos[1]['tel']}です。";
 
 // 問題2
-$count = 1;
+$index = 1;
 
 foreach ($personalInfos as $info) {
-    echo "{$count}番目の{$info['name']}のメールアドレスは{$info['mail']}で、電話番号は{$info['tel']}です。\n";
+    echo "{$index}番目の{$info['name']}のメールアドレスは{$info['mail']}で、電話番号は{$info['tel']}です。\n";
+    $index++;
 };
 
 // 問題3

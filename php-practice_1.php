@@ -68,8 +68,10 @@ if (array_key_exists("埼玉県", $city)) {
 $city['大分県'] = '大分市';
 $city['大阪府'] = '大阪市';
 
+$kanto_city = ['東京都', '神奈川県', '千葉県', '埼玉県', '栃木県', '群馬県', '茨城県'];
+
 foreach ($city as $city_key => $city_value) {
-    if(in_array($city_key, ['東京都', '神奈川県', '千葉県', '埼玉県', '栃木県', '群馬県', '茨城県'])) {
+    if(in_array($city_key, $kanto_city)) {
         echo "{$city_key}の県庁所在地は、{$city_value}です。\n";
     } else {
         echo "{$city_key}は関東地方ではありません。\n";
@@ -86,10 +88,15 @@ seyHello('長尾');
 
 // Q11 関数-2
 
-function calcTaxInPrice($taxInPrice) {
-    echo $taxInPrice . '円の商品の税込み価格は' . $taxInPrice * 1.1 . '円です。';
-}
-calcTaxInPrice(1000);
+function calcTaxInPrice($price) {
+    $taxInPrice = $price * 1.1;
+    return $taxInPrice;
+  };
+  
+  $price = 1000;
+  
+  $taxInPrice = calcTaxInPrice($price);
+  echo $price . '円の商品の税込み価格は' . $taxInPrice . 'です。';
 
 // Q12 関数とif文
 
