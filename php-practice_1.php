@@ -68,13 +68,11 @@ if (array_key_exists("埼玉県", $city)) {
 $city['大分県'] = '大分市';
 $city['大阪府'] = '大阪市';
 
-$kanto_city = ['東京都', '神奈川県', '千葉県', '埼玉県', '栃木県', '群馬県', '茨城県'];
-
 foreach ($city as $city_key => $city_value) {
-    if(in_array($city_key, $kanto_city)) {
-        echo "{$city_key}の県庁所在地は、{$city_value}です。\n";
-    } else {
+    if($city_value === "大分市" || $city_value === "大阪市") {
         echo "{$city_key}は関東地方ではありません。\n";
+    } else {
+        echo "{$city_key}の県庁所在地は、{$city_value}です。\n";
     }
 };
 
