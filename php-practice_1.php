@@ -55,8 +55,10 @@ foreach ($city as $value) {
 
 // Q8 連想配列-2
 
-if (array_key_exists("埼玉県", $city)) {
-    echo "埼玉県の県庁所在地は、" . $city["埼玉県"] . "です。";
+foreach ($city as $city_key => $city_value) {
+    if($city_key === '埼玉県') {
+        echo "{$city_key}の県庁所在地は{$city_value}です。";
+    }
 };
 
 // Q9 連想配列-3
