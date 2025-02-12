@@ -18,11 +18,10 @@ for ($i = 1; $i <= 100; $i++) {
 echo "{$personalInfos[1]['name']}の電話番号は{$personalInfos[1]['tel']}です。";
 
 // 問題2
-$index = 1;
 
-foreach ($personalInfos as $info) {
-    echo "{$index}番目の{$info['name']}のメールアドレスは{$info['mail']}で、電話番号は{$info['tel']}です。\n";
+foreach ($personalInfos as $index => $info) {
     $index++;
+    echo "{$index}番目の{$info['name']}のメールアドレスは{$info['mail']}で、電話番号は{$info['tel']}です。\n";
 };
 
 // 問題3
@@ -53,8 +52,7 @@ class Student
 }
 
 $numaguchi = new Student(18, '沼口');
-
-echo "学籍番号{$numaguchi->studentId}番の生徒は{$numaguchi->studentName}です。";
+printf("学籍番号%d番の生徒は%sです。\n", $numaguchi->studentId, $numaguchi->studentName);
 
 // Q4 オブジェクト-2
 class Student
@@ -78,7 +76,8 @@ $yamada->attend('PHP');
 
 // Q5 定義済みクラス
 // 問題1
-$today = new DateTime();
+$today = new DateTime('now');
+$today->modify('-1 month');
 echo $today->format('Y-m-d');
 
 // 問題2
